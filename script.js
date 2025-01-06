@@ -70,7 +70,7 @@ fetchPokemonData(currentPokemonId);
 // 前のポケモン
 document.getElementById("prev-button").addEventListener("click", () => {
     if (currentPokemonId === 1) {
-        currentPokemonId = 1025; // 1番の時、最終番号1025に飛ぶ
+        currentPokemonId = 1025; // ID1の時、最終番号ID1025に飛ぶ
     } else {
         currentPokemonId--;
     }
@@ -79,10 +79,12 @@ document.getElementById("prev-button").addEventListener("click", () => {
 
 // 次のポケモン
 document.getElementById("next-button").addEventListener("click", () => {
-    if (currentPokemonId < 1025) {
+    if (currentPokemonId === 1025) {
+        currentPokemonId = 1; // ID1025番の時、ID1に戻る
+    } else {
         currentPokemonId++;
-        fetchPokemonData(currentPokemonId);
     }
+    fetchPokemonData(currentPokemonId);
 });
 
 // ランダム表示を切り替える関数
