@@ -108,7 +108,7 @@ function startRandomDisplay() {
     randomInterval = setInterval(() => {
         const randomId = Math.floor(Math.random() * 1024) + 1; // 1から1024の間でランダムなポケモンIDを生成
         fetchPokemonData(randomId);
-    }, 13000); // 13秒ごとにランダムでポケモン表示
+    }, 5000); // 5秒ごとにランダムでポケモン表示
 }
 
 // ランダム表示を停止する関数
